@@ -4,14 +4,15 @@ import Character from './Character';
 
 const CharacterList = ({ characters }) => (
   <ul>
-    {characters.map((character) => 
-      (<li key={character.id}>
+    {characters.map((character) => (
+      <li key={character.id}>
         <Character
+          id={character.id}
           name={character.name}
           image={character.image}
         />
-      </li>)
-    )}
+      </li>
+    ))}
   </ul>
 );
 
@@ -21,8 +22,8 @@ CharacterList.propTypes = {
       id: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
       image: PropTypes.string.isRequired,
-    })
-  )
+    }).isRequired
+  ),
 };
 
 export default CharacterList;
