@@ -4,12 +4,13 @@ import App from './App';
 
 describe('App', () => {
   it('renders app', async () => {
-    render(<App />);
+    const component = render(<App />);
 
     screen.getByAltText('loading spinner');
 
     const ul = await screen.findByRole('list', { name: 'characters' });
     expect(ul).not.toBeEmptyDOMElement();
+    expect(component).toMatchSnapshot();
 
   });
 });
