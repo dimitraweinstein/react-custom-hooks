@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { fetchHeyArnold } from '../services/heyArnoldApi';
 import CharacterList from '../components/characters/CharacterList';
 
-const HeyArnoldContainer = () => {
+const HeyArnoldList = () => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
@@ -23,4 +23,4 @@ const HeyArnoldContainer = () => {
   return <CharacterList characters={characters} />;
 };
 
-export default HeyArnoldContainer;
+export default HeyArnoldList;

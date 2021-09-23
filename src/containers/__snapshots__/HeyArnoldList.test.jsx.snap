@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`App renders app 1`] = `
+exports[`Hey Arnold List Container renders a list of characters on the page 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
