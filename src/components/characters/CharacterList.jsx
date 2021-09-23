@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import Character from './Character';
 
@@ -6,11 +7,12 @@ const CharacterList = ({ characters }) => (
   <ul aria-label="characters">
     {characters.map((character) => (
       <li key={character.id}>
-        <Character
-          id={character.id}
-          name={character.name}
-          image={character.image}
-        />
+        <Link to={`/${character.id}`}>
+          <Character
+            name={character.name}
+            image={character.image}
+          />
+        </Link>
       </li>
     ))}
   </ul>
