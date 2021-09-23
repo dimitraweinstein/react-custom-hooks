@@ -22,6 +22,7 @@ const HeyArnoldDetails = () => {
   return (
     <>
       <Character
+        // character={character}
         image={character.image}
         name={character.name}
       />
