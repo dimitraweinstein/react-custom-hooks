@@ -25,3 +25,4 @@ CharacterList.propTypes = {
   )
 };
 
+export default CharacterList;
