@@ -1,18 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import { fetchHeyArnold } from '../services/heyArnoldApi';
+import React from 'react';
 import CharacterList from '../components/characters/CharacterList';
+import { useCharacters } from '../hooks/useCharacters';
 
 const HeyArnoldList = () => {
-  const [loading, setLoading] = useState(true);
-  const [characters, setCharacters] = useState([]);
-
-  useEffect(() => (
-    fetchHeyArnold()
-      .then((characters) => {
-        setCharacters(characters);
-      })
-      .finally(() => setLoading(false))
-  ), []);
+  const { characters, loading } = useCharacters();
 
   if (loading) return <img
     // eslint-disable-next-line max-len

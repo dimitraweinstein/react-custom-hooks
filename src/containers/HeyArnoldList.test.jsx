@@ -11,9 +11,9 @@ describe('Hey Arnold List Container', () => {
       </MemoryRouter>
     );
 
-    screen.getByAltText('loading spinner');
+    screen.getByText('loading spinner');
 
-    const ul = await screen.findByRole('list', { name: 'characters' });
+    const ul = screen.findByRole('list', { name: 'characters' });
     expect(ul).not.toBeEmptyDOMElement();
     expect(component).toMatchSnapshot();
 
