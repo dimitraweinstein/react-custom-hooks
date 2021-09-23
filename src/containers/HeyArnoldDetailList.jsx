@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { fetchHeyArnoldById } from '../services/heyArnoldApi';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import Character from '../components/characters/Character';
+import { useOneCharacter } from '../hooks/useOneCharacter';
 
 const HeyArnoldDetails = () => {
-  const [loading, setLoading] = useState(true);
-  const [character, setCharacter] = useState({});
-  const { id } = useParams();
-
-  useEffect(() => (
-    fetchHeyArnoldById(id)
-      .then((character) => {
-        setCharacter(character);
-        console.log(character, 'this is a character');
-      })
-      .finally(() => setLoading(false))
-  ), []);
+  const { loading, character } = useOneCharacter();
 
   if (loading) return <h1>Loading...</h1>;
 
