@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Character from './Character';
 
 const CharacterList = ({ characters }) => (
-  <ul>
+  <ul aria-label="characters">
     {characters.map((character) => (
       <li key={character.id}>
         <Character

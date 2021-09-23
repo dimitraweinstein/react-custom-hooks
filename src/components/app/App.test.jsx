@@ -6,7 +6,10 @@ describe('App', () => {
   it('renders app', async () => {
     render(<App />);
 
-    screen.getByText('Loading...');
+    screen.getByAltText('loading spinner');
+
+    const ul = await screen.findByRole('list', { name: 'characters' });
+    expect(ul).not.toBeEmptyDOMElement();
 
   });
 });
