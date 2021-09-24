@@ -2,7 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Character = ({ name, image }) => (
-  <figure>
+  <figure
+    aria-label="character"
+    role="character">
     <img src={image} alt={name} />
     <figcaption>
       {name}
