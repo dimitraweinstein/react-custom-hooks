@@ -5,17 +5,18 @@ import { MemoryRouter } from 'react-router-dom';
 
 describe('Hey Arnold List Container', () => {
   it('renders a list of characters on the page', async () => {
-    const component = render(
+    render(
       <MemoryRouter>
         <HeyArnoldList />
-      </MemoryRouter>
-    );
-
-    screen.getByText('loading spinner');
-
-    const ul = screen.findByRole('list', { name: 'characters' });
+      </MemoryRouter>);
+        
+    screen.getByAltText('loading spinner');
+    
+    // eslint-disable-next-line max-len
+    const ul = await screen.findByRole('list', { name: 'characters' }, { timeout: 2000 });
     expect(ul).not.toBeEmptyDOMElement();
-    expect(component).toMatchSnapshot();
+    expect(ul).toMatchSnapshot();
+    
 
   });
 });
